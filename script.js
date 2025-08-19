@@ -1,4 +1,8 @@
 console.log('Welcome to MyTicTacToe.com');
+console.log('Enjoy your time playing this game hehe');
+console.log('Who won?');
+console.log('The dev won hehe');
+
 let music = new Audio("music.mp3");
 let ting = new Audio("ting.mp3");
 let gameover = new Audio("gameover.mp3");
@@ -29,6 +33,7 @@ let checkForWin = () => {
     let boxtexts = document.getElementsByClassName("boxtext");
     winArray.forEach(e => {
         if (((boxtexts[e[0]].textContent === boxtexts[e[1]].textContent) && (boxtexts[e[1]].textContent === boxtexts[e[2]].textContent) && (boxtexts[e[0]].textContent != "")) && (gameOver === false)) {
+            music.currentTime=0;
             music.pause();
             gameover.play();
             document.querySelector(".turn").textContent = turn + " Won";
@@ -60,6 +65,7 @@ let checkForWin = () => {
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(box => {
     box.addEventListener("click", () => {
+        
         music.play();
         let boxtext = box.querySelector(".boxtext");
         if (boxtext.textContent === "") {
@@ -75,6 +81,7 @@ Array.from(boxes).forEach(box => {
 });
 
 document.querySelector("#reset").addEventListener("click", () => {
+    music.currentTime=0;
     gameOver = false;
     music.pause()
     Array.from(document.getElementsByClassName("boxtext")).forEach(boxtext => {
