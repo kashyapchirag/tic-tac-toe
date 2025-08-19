@@ -103,6 +103,7 @@ header nav ul {
 
 .gif {
     height: 0px;
+    transition: height 0.7s ease-in-out;
 }
 
 .bt-0 {
