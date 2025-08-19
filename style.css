@@ -83,11 +83,13 @@ header nav ul {
     font-weight: 600;
     color: rgb(236, 47, 176);
     margin-right: 10px;
+    display: flex;
+    align-items: center;
 }
 
 #reset {
     background-color: rgb(251, 227, 244);
-    padding: 2px;
+    padding: 2px 10px;
     border: 2px solid purple;
     border-radius: 11px;
     cursor: pointer;
