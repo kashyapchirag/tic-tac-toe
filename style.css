@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     font-family: poppins;
 }
 
-nav{
+nav {
     background-color: black;
     padding: 0px 0px 0px 20px;
     color: white;
@@ -14,170 +14,123 @@ nav{
     height: 65px;
     display: flex;
     align-items: center;
-    
 }
 
-header nav ul{
+header nav ul {
     list-style: none;
 }
 
-.gameContainer{
-    margin-top: 100px;
+.gameContainer {
+    margin-top: 75px;
     display: flex;
     justify-content: center;
     column-gap: 50px;
     flex-wrap: wrap;
-    
 }
 
-.gameContainer .container{
-
+.gameContainer .container {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 10vw);
     grid-template-rows: repeat(3, 10vw);
 }
 
-.gameContainer .container .box{
+.line {
+    height: 3px;
+    width: 0vw;
+    position: absolute;
+    background-color: rgb(252, 20, 186);
+    transition: width 1s ease-in-out;
+
+}
+
+.gameContainer .container .box {
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid;
     font-size: 10vw;
     cursor: pointer;
-    
 }
 
-.gameContainer .container .box:hover{
-    background-color: azure;
+.gameContainer .container .box:hover {
+    background-color: rgb(251, 227, 244);
 }
 
-.info{
+.info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 50vh;
-
 }
 
-.gameContainer .info h2{
+.gameContainer .info h2 {
+    padding: 0px 18px;
     display: flex;
     justify-content: center;
     font-weight: 500;
     margin-bottom: 10px;
+    font-size: xx-large;
+    text-align: center;
 }
 
-.gameContainer .info section{
+.gameContainer .info section {
     display: flex;
     margin-left: 15px;
+    justify-content: center;
 }
 
-.gameContainer .info section span{
-    font-size: small;
+.gameContainer .info section span {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(236, 47, 176);
     margin-right: 10px;
 }
 
-.gameContainer .info .img{
-    height: 50vh;
-    width: 20vw;
+#reset {
+    background-color: rgb(251, 227, 244);
+    padding: 2px;
+    border: 2px solid purple;
+    border-radius: 11px;
+    cursor: pointer;
+}
+
+.gameContainer .info .img {
+    padding-top: 15px;
+    width: 100%;
     display: flex;
-    justify-content: flex-start;
-    margin-left: 25px;
+    justify-content: center;
     align-items: center;
 }
 
-.gif{
+.gif {
     height: 0px;
 }
 
-.bt-0{
+.bt-0 {
     border-top: 0px !important;
 }
-.bl-0{
+
+.bl-0 {
     border-left: 0px !important;
 }
-.br-0{
+
+.br-0 {
     border-right: 0px !important;
 }
-.bb-0{
+
+.bb-0 {
     border-bottom: 0px !important;
 }
 
-
-
-/* console.log('Welcome to MyTicTacToe.com');
-
-let music = new Audio("music.mp3");
-let gameover = new Audio("gameover.mp3");
-let ting = new Audio("ting.mp3");
-
-let turn = "0";
-let turnf = () => {
-
-    if (turn === "X") {
-        turn = "0";
-    } else {
-        turn = "X";
+@media (max-width: 800px) {
+    .gameContainer .container {
+        display: grid;
+        grid-template-columns: repeat(3, 20vw);
+        grid-template-rows: repeat(3, 20vw);
     }
-};
-document.querySelector(".turn").textContent = "turn for " + "0";
-
-let gameOver = false;
-
-let checkWin = () => {
-    let wins = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-    ]
-    let boxtexts = document.getElementsByClassName("boxtext");
-    wins.forEach(el => {
-        if ((boxtexts[el[0]].innerText === boxtexts[el[1]].innerText) && (boxtexts[el[1]].innerText === boxtexts[el[2]].innerText) && (boxtexts[el[0]].innerText != "")) {
-            document.querySelector(".turn").textContent = turn + " won";
-            document.getElementById("gif").
-            gameOver = true;
-
-        };
-    });
-
-};
-
-let boxes = document.getElementsByClassName("box");
-let func = () => {
-    Array.from(boxes).forEach(element => {
-
-        element.addEventListener("click", () => {
-            let boxText = element.querySelector(".boxtext");
-            if (boxText.textContent === "") {
-                
-                boxText.textContent = turn;
-                ting.play();
-                checkWin();
-                turnf();
-                
-                if (!gameOver) {
-                    
-                    document.querySelector(".turn").textContent = "turn for " + turn;
-                    
-                }
-
-            }
-
-        });
-    });
-};
-
-document.getElementById("reset").addEventListener("click",()=>{
-    let boxtexts = document.getElementsByClassName("boxtext");
-    Array.from(boxtexts).forEach(e=>{
-        e.textContent="";
-    });
-});
-
-func();
-
- */
+    .gameContainer .container .box {
+        font-size: 20vw;
+    }
+    .info {
+        padding-top: 30px;
+    }
+}
